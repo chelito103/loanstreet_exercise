@@ -1,6 +1,8 @@
 
-### Swagger page: https://mitut76gzd.execute-api.us-east-2.amazonaws.com/Prod/swagger/index.html
-### Controller endpoint: https://mitut76gzd.execute-api.us-east-2.amazonaws.com/Prod/Loan
+### Swagger page: https://3qihjkgruh.execute-api.us-east-2.amazonaws.com/Prod/swagger/index.html
+### Controller endpoint: https://3qihjkgruh.execute-api.us-east-2.amazonaws.com/Prod/Loan
+
+The Client App is under the LoanStreet.LoanService.Client.csproj.  The API is deployed to AWS, but you can still run the app locally in visual studio and run the debugger which will start the app locally.  
 
 ## Requirements
 * Implement the API in the framework or language that you're most comfortable with
