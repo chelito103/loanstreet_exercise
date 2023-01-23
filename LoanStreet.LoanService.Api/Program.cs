@@ -21,7 +21,7 @@ builder.Services.AddAWSLambdaHosting(LambdaEventSource.RestApi);
 builder.Services.AddLogging(logging =>
 {
     logging.AddLambdaLogger();
-    logging.SetMinimumLevel(LogLevel.Trace);
+    logging.SetMinimumLevel(LogLevel.Debug);
 });
 
 builder.Services.AddScoped<LoanRepository, LoanRepositoryImpl>();

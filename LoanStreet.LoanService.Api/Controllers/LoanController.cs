@@ -6,6 +6,9 @@ using Loan = LoanService.DataModel.Loan;
 
 namespace LoanService.Controllers
 {
+    /// <summary>
+    /// Endpoint for creating/managing/viewing loans.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class LoanController : ControllerBase
@@ -13,7 +16,9 @@ namespace LoanService.Controllers
         private readonly ILogger<LoanController> _logger;
         private readonly LoanRepository _loanRepository;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public LoanController(ILogger<LoanController> logger, LoanRepository loanRepository)
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
             _logger = logger;
             _loanRepository = loanRepository;

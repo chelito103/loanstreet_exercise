@@ -1,6 +1,6 @@
 
-### Swagger page: https://3qihjkgruh.execute-api.us-east-2.amazonaws.com/Prod/swagger/index.html
-### Controller endpoint: https://3qihjkgruh.execute-api.us-east-2.amazonaws.com/Prod/Loan
+### Swagger page: https://mitut76gzd.execute-api.us-east-2.amazonaws.com/Prod/swagger/index.html
+### Controller endpoint: https://mitut76gzd.execute-api.us-east-2.amazonaws.com/Prod/Loan
 
 ## Requirements
 * Implement the API in the framework or language that you're most comfortable with

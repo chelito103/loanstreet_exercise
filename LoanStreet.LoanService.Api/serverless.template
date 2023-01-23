@@ -11,11 +11,12 @@
         "Handler": "LoanStreet.LoanService.Api",
         "Runtime": "dotnet6",
         "CodeUri": "",
-        "MemorySize": 512,
+        "MemorySize": 256,
         "Timeout": 30,
         "Role": null,
         "Policies": [
-          "AWSLambda_FullAccess"
+          "AWSLambda_FullAccess",
+          "AmazonDynamoDBFullAccess"
         ],
         "Events": {
           "ProxyResource": {
