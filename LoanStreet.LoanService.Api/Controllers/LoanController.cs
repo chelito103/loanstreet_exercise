@@ -25,13 +25,12 @@ namespace LoanService.Controllers
         }
 
         /// <summary>
-        /// Returns individual loan requested by Id, or all loans.
+        /// Returns individual loan requested by Id.
         /// </summary>
-        /// <param name="loanId">When provided endpoint returns 1 loan based on this Id.</param>
-        /// <returns>Loan(s) based on parameters</returns>
-        [HttpGet]
-        public async Task<IActionResult> GetLoanAsync(
-            [FromQuery] Guid? loanId)
+        /// <param name="loanId">Loan ID (uuid) of loan to retrieve.</param>
+        /// <returns>Loan model</returns>
+        [HttpGet("{loanId}")]
+        public async Task<IActionResult> GetLoanAsync(Guid? loanId)
         {
             _logger.LogTrace($"Entering GetLoanAsync endpoint");
             if (loanId.HasValue)
@@ -53,10 +52,26 @@ namespace LoanService.Controllers
         }
 
         /// <summary>
+        /// Returns all loans.
+        /// </summary>
+        /// <returns>Return list of all loans</returns>
+        [HttpGet]
+        public async Task<IActionResult> GetAllLoanAsync()
+        {
+            _logger.LogTrace($"Entering GetAllLoanAsync endpoint");
+
+            var repoLoans = await _loanRepository.GetAllAsync();
+            var loans = repoLoans.Select(ConvertRepoLoanToContract).ToList();
+
+            _logger.LogTrace($"Exited GetAllLoanAsync endpoint");
+            return Ok(loans);
+        }
+
+        /// <summary>
         /// Create/update a loan object
         /// </summary>
         /// <param name="loanDetails"></param>
-        /// <returns>Status Code 200 on success.</returns>
+        /// <returns>Guid of newly created loan.</returns>
         [HttpPost]
         public async Task<IActionResult> CreateLoanAsync([FromBody] LoanDetails loanDetails)
         {
@@ -94,7 +109,7 @@ namespace LoanService.Controllers
                     return Ok();
                 }
 
-                return BadRequest($"Loan with Id = {loan.Id} does not in exist.");
+                return NotFound($"Loan with Id = {loan.Id} does not in exist.");
             }
 
             _logger.LogTrace($"Exited UpsertLoanAsync endpoint");
