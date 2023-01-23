@@ -1,3 +1,7 @@
+
+### Swagger page: https://3qihjkgruh.execute-api.us-east-2.amazonaws.com/Prod/swagger/index.html
+### Controller endpoint: https://3qihjkgruh.execute-api.us-east-2.amazonaws.com/Prod/Loan
+
 ## Requirements
 * Implement the API in the framework or language that you're most comfortable with
 * The deliverable shall include a web server that supports the following CRU(D) operations:
